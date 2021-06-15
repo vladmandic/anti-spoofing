@@ -1,0 +1,32 @@
+{
+  "name": "anti-spoofing",
+  "version": "0.0.1",
+  "description": "Anti-Spoofing",
+  "main": "anti-spoofing.js",
+  "scripts": {
+    "start": "node anti-spoofing.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladmandic/anti-spoofing.git"
+  },
+  "author": "Vladimir Mandic <mandic00@live.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladmandic/anti-spoofing/issues"
+  },
+  "homepage": "https://github.com/vladmandic/anti-spoofing#readme",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^3.7.0",
+    "@vladmandic/pilogger": "^0.2.17"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}
