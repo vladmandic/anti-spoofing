@@ -21,6 +21,7 @@
   "homepage": "https://github.com/vladmandic/anti-spoofing#readme",
   "dependencies": {
     "@tensorflow/tfjs-node": "^3.7.0",
+    "@vladmandic/face-api": "^1.4.2",
     "@vladmandic/pilogger": "^0.2.17"
   },
   "devDependencies": {
