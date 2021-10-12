@@ -12,10 +12,10 @@ const modelOptions = {
 async function loadImage(fileName, inputSize) {
   const data = fs.readFileSync(fileName);
   const obj = tf.tidy(() => {
-    const buffer = tf.node.decodeImage(data);
-    const resize = tf.image.resizeBilinear(buffer, [inputSize, inputSize]);
-    const cast = resize.cast('float32');
-    const expand = cast.expandDims(0);
+    const buffer = tf.node.decodeImage(data); // create rgb tensor from image
+    const resize = tf.image.resizeBilinear(buffer, [inputSize, inputSize]); // model input resolution is 128x128
+    const normalize = tf.div(resize, 255); // normalize input to range 0..1
+    const expand = tf.expandDims(normalize, 0);
     const tensor = expand;
     const img = { fileName, tensor, inputShape: [buffer.shape[1], buffer.shape[0]], outputShape: tensor.shape, size: buffer.size };
     return img;
@@ -29,7 +29,6 @@ async function main() {
   // init tensorflow
   await tf.enableProdMode();
   await tf.setBackend('tensorflow');
-  await tf.ENV.set('DEBUG', false);
   await tf.ready();
 
   // load model
@@ -48,11 +47,8 @@ async function main() {
 
   // run actual prediction
   const res = model.execute(img.tensor, modelOptions.outputTensors);
-
-  // print results
-  // @ts-ignore
-  const real = res.dataSync()[0] === 1;
-  log.data('Real?', real);
+  const real = await res.data();
+  log.data('Real?', real[0]);
 }
 
 main();

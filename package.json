@@ -1,6 +1,6 @@
 {
   "name": "anti-spoofing",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Anti-Spoofing",
   "main": "anti-spoofing.js",
   "scripts": {
