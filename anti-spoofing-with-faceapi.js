@@ -35,7 +35,7 @@ async function main() {
   optionsSSDMobileNet = new faceapi.SsdMobilenetv1Options({ minConfidence, maxResults });
 
   log.info('Loading Anti-Spoofing model');
-  const antispoofing = await tf.loadGraphModel('file://model-graph-f16/anti-spoofing.json');
+  const antispoofing = await tf.loadGraphModel('file://model/anti-spoofing.json');
   const inputSize = Object.values(antispoofing.modelSignature['inputs'])[0].tensorShape.dim[2].size;
 
   const buffer = fs.readFileSync(input);

@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/vladmandic/anti-spoofing#readme",
   "dependencies": {
-    "@tensorflow/tfjs-node": "^3.18.0",
-    "@vladmandic/face-api": "^1.6.10",
-    "@vladmandic/pilogger": "^0.4.4"
+    "@tensorflow/tfjs-node": "^3.19.0",
+    "@vladmandic/face-api": "^1.7.1",
+    "@vladmandic/pilogger": "^0.4.6"
   },
   "devDependencies": {
-    "eslint": "^8.16.0",
+    "eslint": "^8.21.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0"

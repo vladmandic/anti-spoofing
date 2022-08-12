@@ -4,7 +4,7 @@ const log = require('@vladmandic/pilogger');
 const tf = require('@tensorflow/tfjs-node');
 
 const modelOptions = {
-  modelPath: 'file://model-graph-f16/anti-spoofing.json',
+  modelPath: 'file://model/anti-spoofing.json',
   outputTensors: ['activation_4'],
 };
 
